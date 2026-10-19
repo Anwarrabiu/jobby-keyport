@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tests</title>
+</head>
+<body>
+
+<label>Result: </label>
+<div id="result">
+	
+</div>
+<label>Enter First Number</label>
+<input type="text" name="firstno" id="firstno"  required>
+<label>Enter Second Number</label>
+<input type="text" name="secondno" id="secondno" required>
+
+
+
+
+<script type="text/javascript">
+function operate(){
+	let result = 0;
+	let operaation = document.getElementsByTagName('operation');
+	var operation = document.querySelector('input[name="operation"]:checked').value;
+	var fno = parseInt(document.getElementById('firstno').value);
+	var sno = parseInt(document.getElementById('secondno').value);
+	
+
+	if (operation == 'add'){
+		result = fno + sno;
+	}else if(operation == 'subtract'){
+		result = fno - sno;
+	}else if(operation == 'multiply'){
+		result = fno * sno;
+	}else{
+		result = fno / sno;
+	}
+
+
+
+	
+	document.getElementById('result').innerHTML = 'Answer for '+ operation + ' is: '+result;
+	
+}
+
+
+</script>
+
+
+<label>Add</label>
+<input type="radio" name="operation" value="add"  onclick="operate()">
+
+<label>Subtract</label>
+<input type="radio" name="operation" value="subtract"  onclick="operate()">
+
+<label>Multiply</label>
+<input type="radio" name="operation" value="multiply"  onclick="operate()"> 
+
+<label>Divide</label>
+<input type="radio" name="operation" value="division" onclick="operate()">
+
+
+
+</body>
+</html>
